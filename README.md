@@ -1,6 +1,6 @@
 # ProtoHax
 
-<img align="right" width="159px" src="https://raw.githubusercontent.com/hax0r31337/ProtoHax/stable/icon.png">
+<img align="right" width="159px" src="https://raw.githubusercontent.com/SkidderMC/ProtoHax/stable/icon.png">
 
 ProtoHax is an open-source cheat for Minecraft: Bedrock Edition that works through the network layer.   
 This repository contains the abstract layer of the cheat, and is designed to be platform-agnostic.
@@ -31,7 +31,7 @@ For those who are unfamiliar with the license, here is a summary of its main poi
 - **Your modified application must also be licensed under the GPL** 
 
 ## Example Code
-Check out the [example](https://github.com/hax0r31337/ProtoHax/tree/neko-ribbon/src/test) for sample usage.
+Check out the [example](https://github.com/SkidderMC/ProtoHax/tree/neko-ribbon/src/test) for sample usage.
 
 ## Platform-specific Implementations
 
@@ -39,7 +39,7 @@ To use ProtoHax on a specific platform, you will need to use the platform-specif
 
 | Platform | Repository           |
 |----------|----------------------|
-| Android  | [ProtoHax-Android](https://github.com/hax0r31337/ProtoHax-Android) |
+| Android  | [ProtoHax-Android](https://github.com/SkidderMC/ProtoHax-Android) |
 
 ## Setting up a Workspace
 ProtoHax uses Gradle and JDK11, please make sure it is installed properly if you're facing an build failure.

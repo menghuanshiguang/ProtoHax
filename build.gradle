@@ -49,8 +49,20 @@ shadowJar {
 
 publishing {
     publications {
-        shadow(MavenPublication) { publication ->
-            project.shadow.component(publication)
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = 'GitHubPackages'
+            url = uri('https://maven.pkg.github.com/SkidderMC/ProtoHax')
+
+            credentials {
+                username = System.getenv("USERNAME_GITHUB")
+                password = System.getenv("TOKEN_GITHUB")
+            }
         }
     }
 }
+

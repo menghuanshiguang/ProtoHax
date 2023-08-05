@@ -51,7 +51,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            groupId = 'com.example'
+            groupId = 'dev.sora.relay'
             artifactId = project.name.toLowerCase()
             version = project.version.toLowerCase()
         }

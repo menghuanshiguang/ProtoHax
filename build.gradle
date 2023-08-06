@@ -50,10 +50,11 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            from components.java
             groupId = 'dev.sora.relay'
             artifactId = project.name.toLowerCase()
             version = project.version.toLowerCase()
+            
+            artifact shadowJar
         }
     }
     repositories {

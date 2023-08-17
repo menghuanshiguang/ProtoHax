@@ -17,6 +17,7 @@ abstract class Value<T>(val name: String, valueIn: T) {
 	private val listeners = mutableListOf<ValueListener<T>>()
 	var value: T = valueIn
 		set(newValue) {
+			
 			if (newValue == field) return
 			if (!validateValue(newValue)) {
 				logWarn("[ValueSystem ($name)]: failed to validate value $newValue")

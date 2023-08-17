@@ -45,12 +45,15 @@ abstract class CheatModule(val name: String, val category: CheatCategory,
         }
 	val displayName: String
 		get() {
-			return LanguageManager.replace("%module.$name.name%")
+			return try {
+				LanguageManager.replace("%module.$name.name%")
+			}catch (e:Exception){
+				name
+			}
 		}
 	protected val handlers = mutableListOf<EventHook<in GameEvent>>()
 	lateinit var session: GameSession
 	lateinit var moduleManager: ModuleManager
-	val languageManager = LanguageManager
 
     open fun onEnable() {}
 

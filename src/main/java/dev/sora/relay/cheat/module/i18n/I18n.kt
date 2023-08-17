@@ -1,5 +1,6 @@
 package dev.sora.relay.cheat.module.i18n
 
+import dev.sora.relay.utils.logInfo
 import dev.sora.relay.utils.logWarn
 import java.io.BufferedReader
 import java.io.InputStream
@@ -50,6 +51,7 @@ class I18n(private val locale: String) {
 	}
 
 	private fun read(locales: String) {
+		logInfo("Loading languages file...")
 		val prop = Properties()
 
 		prop.load(InputStreamReader(find(locales), Charsets.UTF_8))

@@ -36,14 +36,14 @@ class I18n(private val locale: String) {
 
 	private fun find(str: String): InputStream {
 		try {
-			I18n::class.java.classLoader.getResourceAsStream("$path/${str}/language.lang")?.let {
+			I18n::class.java.getResourceAsStream("$path/${str}/language.lang")?.let {
 				return it
 			}
 		} catch (e: Exception) {
 			logWarn("Can't find language file! " + e.message)
 		}
 
-		I18n::class.java.classLoader.getResourceAsStream("$path/language.lang")?.let {
+		I18n::class.java.getResourceAsStream("$path/language.lang")?.let {
 			return it
 		}
 

@@ -1,5 +1,6 @@
 package dev.sora.relay.cheat.module
 
+import dev.sora.relay.cheat.module.i18n.LanguageManager
 import dev.sora.relay.cheat.value.Choice
 import dev.sora.relay.cheat.value.ChoiceValue
 import dev.sora.relay.cheat.value.Configurable
@@ -12,7 +13,6 @@ import dev.sora.relay.game.event.Handler
 
 abstract class CheatModule(val name: String, val category: CheatCategory,
                            val defaultOn: Boolean = false, val canToggle: Boolean = true) : Configurable {
-
     var state = defaultOn
         set(state) {
             if (field == state) return
@@ -43,10 +43,14 @@ abstract class CheatModule(val name: String, val category: CheatCategory,
 				}
             }
         }
-
+	val displayName: String
+		get() {
+			return LanguageManager.replace("%module.$name.name%")
+		}
 	protected val handlers = mutableListOf<EventHook<in GameEvent>>()
 	lateinit var session: GameSession
 	lateinit var moduleManager: ModuleManager
+	val languageManager = LanguageManager
 
     open fun onEnable() {}
 

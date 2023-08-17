@@ -27,7 +27,6 @@ import kotlin.math.floor
 import kotlin.math.pow
 
 class ModuleCrystalAura : CheatModule("CrystalAura", CheatCategory.COMBAT) {
-
 	private var rangeValue by floatValue("Range", 5f, 3f..10f)
 	private var suicideValue by boolValue("Suicide", false)
 	private var placeValue by boolValue("Place", true)
@@ -41,11 +40,16 @@ class ModuleCrystalAura : CheatModule("CrystalAura", CheatCategory.COMBAT) {
 
 	private val onTickExplode = handle<EventTick>({ explodeTimer.hasTimePassed(delayValue) }) {
 		val rangeSq = rangeValue.pow(2)
-		val crystal = session.level.entityMap.values
-			.filter { it is EntityUnknown && it.identifier == "minecraft:ender_crystal" && it.distanceSq(session.player) < rangeSq }.map {
+		val crystal = session.level.entityMap.values.filter {
+				it is EntityUnknown && it.identifier == "minecraft:ender_crystal" && it.distanceSq(session.player) < rangeSq
+			}.map {
 				var selfDamage = 0f
 				var mostDamage = 0f
-				session.level.simulateExplosionDamage(it.vec3Position, EXPLOSION_SIZE, listOf(session.player)) { entity, damage ->
+				session.level.simulateExplosionDamage(
+					it.vec3Position,
+					EXPLOSION_SIZE,
+					listOf(session.player)
+				) { entity, damage ->
 					if (entity == session.player) {
 						selfDamage = damage
 					} else if (entity is EntityPlayer && damage > mostDamage) {
@@ -78,7 +82,11 @@ class ModuleCrystalAura : CheatModule("CrystalAura", CheatCategory.COMBAT) {
 		val bestPlace = bases.map {
 			var selfDamage = 0f
 			var mostDamage = 0f
-			session.level.simulateExplosionDamage(it.add(0, 2, 0).toVector3f(), EXPLOSION_SIZE, listOf(session.player)) { entity, damage ->
+			session.level.simulateExplosionDamage(
+				it.add(0, 2, 0).toVector3f(),
+				EXPLOSION_SIZE,
+				listOf(session.player)
+			) { entity, damage ->
 				if (entity == session.player) {
 					selfDamage = damage
 				} else if (entity is EntityPlayer && damage > mostDamage) {
@@ -125,12 +133,18 @@ class ModuleCrystalAura : CheatModule("CrystalAura", CheatCategory.COMBAT) {
 	}
 
 	private val handleEntitySpawn = handle<EventEntitySpawn> {
-		if (!explodeTimer.hasTimePassed(delayValue) || entity !is EntityUnknown || entity.identifier != "minecraft:ender_crystal" || entity.distance(session.player) > rangeValue)
-			return@handle
+		if (!explodeTimer.hasTimePassed(delayValue) || entity !is EntityUnknown || entity.identifier != "minecraft:ender_crystal" || entity.distance(
+				session.player
+			) > rangeValue
+		) return@handle
 
 		var selfDamage = 0f
 		var mostDamage = 0f
-		session.level.simulateExplosionDamage(entity.vec3Position, EXPLOSION_SIZE, listOf(session.player)) { entity1, damage ->
+		session.level.simulateExplosionDamage(
+			entity.vec3Position,
+			EXPLOSION_SIZE,
+			listOf(session.player)
+		) { entity1, damage ->
 			if (entity1 == session.player) {
 				selfDamage = damage
 			} else if (entity1 is EntityPlayer && damage > mostDamage) {
@@ -153,12 +167,16 @@ class ModuleCrystalAura : CheatModule("CrystalAura", CheatCategory.COMBAT) {
 	private fun searchPlaceBase(session: GameSession, range: Int): List<Vector3i> {
 		val center = session.player.vec3Position.toVector3iFloor()
 		val bases = mutableListOf<Vector3i>()
-		for (x in center.x-range until center.x+range) {
-			for (y in center.y-range until center.y+range) {
-				for (z in center.z-range until center.z+range) {
+		for (x in center.x - range until center.x + range) {
+			for (y in center.y - range until center.y + range) {
+				for (z in center.z - range until center.z + range) {
 					val block = session.level.getBlockAt(x, y, z)
-					if ((block.identifier == "minecraft:obsidian" || block.identifier == "minecraft:bedrock")
-							&& session.level.getBlockAt(x, y + 1, z).identifier == "minecraft:air") {
+					if ((block.identifier == "minecraft:obsidian" || block.identifier == "minecraft:bedrock") && session.level.getBlockAt(
+							x,
+							y + 1,
+							z
+						).identifier == "minecraft:air"
+					) {
 						bases.add(Vector3i.from(x, y, z))
 					}
 				}

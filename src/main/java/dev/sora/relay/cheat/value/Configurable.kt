@@ -8,7 +8,7 @@ interface Configurable {
         values.find { it.name.equals(valueName, ignoreCase = true) }
 
     fun boolValue(name: String, value: Boolean)
-        = BoolValue(name, value).also { values.add(it) }
+        = BoolValue(name, value).also { values.add(it); }
 
     fun floatValue(name: String, value: Float, range: ClosedFloatingPointRange<Float>)
         = FloatValue(name, value, range).also { values.add(it) }

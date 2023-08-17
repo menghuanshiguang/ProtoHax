@@ -1,0 +1,126 @@
+lang.name=Русский
+moduleType.combat=Бой
+moduleType.misc=Разное
+moduleType.movement=Движение
+moduleType.visual=Визуальное
+
+module.CrystalAura.name=Кристалловая Аура
+module.CrystalAura.setting.Range=Радиус
+module.CrystalAura.setting.Suicide=Режим самоуничтожения
+module.CrystalAura.setting.Place=Разместить
+module.CrystalAura.setting.Delay=Задержка
+module.CrystalAura.setting.RemoveParticles=Убрать частицы
+
+module.KillAura.name=Убийственная Аура
+module.KillAura.setting.Range=Радиус
+module.KillAura.setting.AttackMode=Режим атаки
+module.KillAura.setting.RotationMode=Режим поворота
+module.KillAura.setting.Swing=Махание
+module.KillAura.setting.PriorityMode=Режим приоритета
+module.KillAura.setting.ReversePriority=Обратный приоритет
+module.KillAura.setting.Mouseover=Поднесение мыши
+module.KillAura.setting.SwingSound=Звук махания
+module.KillAura.setting.FailRate=Процент неудачи
+module.KillAura.setting.FailSound=Звук неудачи
+
+module.Surround.name=Окружение
+module.Surround.setting.FitInHole=Подгонка под дыру
+module.Surround.setting.OnSneak=При приседании
+module.Surround.setting.PlaceDelay=Задержка перед размещением
+
+module.Targets.name=Цели
+module.Targets.setting.TargetPlayers=Атаковать игроков
+module.Targets.setting.TargetEntities=Атаковать сущности
+module.Targets.setting.AntiBotMode=Режим против ботов
+module.Targets.setting.TeamCheckMode=Режим проверки команды
+
+module.Velocity.name=Без отбрасывания
+module.Velocity.setting.Mode=Режим
+
+module.BGM.name=Музыка на заднем плане
+
+module.DeviceSpoof.name=Обман устройства
+module.DeviceSpoof.setting.DeviceId=Идентификатор устройства
+module.DeviceSpoof.setting.Platform=Платформа
+
+module.Disabler.name=Отключение
+module.Disabler.setting.Mode=Режим
+
+module.FastBreak.name=Быстрое разрушение
+module.FastBreak.setting.Level=Уровень
+
+module.InventoryHelper.name=Помощник инвентаря
+module.InventoryHelper.setting.StealChest=Воровать сундуки
+module.InventoryHelper.setting.GuiOpen=Открывать интерфейсы
+module.InventoryHelper.setting.SimulateInventory=Моделировать инвентарь
+module.InventoryHelper.setting.AutoClose=Автоматически закрывать
+module.InventoryHelper.setting.ThrowUnnecessary=Выбрасывать ненужные предметы
+module.InventoryHelper.setting.Swing=Махание
+module.InventoryHelper.setting.Armor=Броня
+module.InventoryHelper.setting.Offhand=Побочная рука
+module.InventoryHelper.setting.SortSword=Сортировать мечи
+module.InventoryHelper.setting.SortTrident=Сортировать трезубцы
+module.InventoryHelper.setting.SortPickaxe=Сортировать кирки
+module.InventoryHelper.setting.SortAxe=Сортировать топоры
+module.InventoryHelper.setting.SortBlock=Сортировать блоки
+module.InventoryHelper.setting.SortGApple=Сортировать золотые яблоки
+module.InventoryHelper.setting.NoCloseIfNoSort=Не закрывать, если не сортировано
+
+module.Miner.name=Шахтер
+module.Miner.setting.Block=Блок
+module.Miner.setting.Range=Диапазон
+module.Miner.setting.Swing=Махание
+module.Miner.setting.Action=Действие
+
+module.NoSkin.name=Без скина
+
+module.ResourcePackSpoof.name=Обман ресурс-пака
+module.ResourcePackSpoof.setting.AcceptServerPacks=Принимать пакеты с сервера
+
+module.Spammer.name=Спаммер
+module.Spammer.setting.Mode=Режим
+module.Spammer.setting.Message=Сообщение
+module.Spammer.setting.RandomSuffix=Случайный суффикс
+
+module.AirJump.name=Прыжок в воздухе
+module.AirJump.setting.SpeedMultiplier=Множитель скорости
+
+module.Blink.name=Мигание
+
+module.BlockFly.name=Полет на блоках
+module.BlockFly.setting.Swing=Махание
+module.BlockFly.setting.AdaptiveBlockId=Адаптивный ID блока
+module.BlockFly.setting.HeldBlock=Держать блок
+module.BlockFly.setting.Rotation=Поворот
+
+module.Clip.name=Проход сквозь блоки
+module.Clip.setting.Vertical=Вертикальный
+module.Clip.setting.Horizontal=Горизонтальный
+
+module.Fly.name=Летать
+module.Fly.setting.Mode=Режим
+module.Fly.setting.Speed=Скорость
+module.Fly.setting.PressJump=Нажать прыжок
+
+module.NoFall.name=Без урона от падения
+
+module.OPFightBot.name=Продвинутый боевой бот
+module.OPFightBot.setting.Mode=Режим
+module.OPFightBot.setting.Range=Радиус
+module.OPFightBot.setting.Passive=Пассивный режим
+module.OPFightBot.setting.HorizontalSpeed=Горизонтальная скорость
+module.OPFightBot.setting.VerticalSpeed=Вертикальная скорость
+module.OPFightBot.setting.StrafeSpeed=Скорость стрейфа
+
+module.Speed.name=Скорость
+module.Speed.setting.Mode=Режим
+module.Speed.setting.Speed=Скорость
+module.Speed.setting.Jump=Прыжок
+module.Speed.setting.FakeSprint=Фейковый спринт
+
+module.AntiBlind.name=Защита от негативных эффектов
+
+module.HitEffect.name=Эффект удара
+module.HitEffect.setting.Effect=Эффект
+
+module.NoHurtCam.name=Без тряски от урона

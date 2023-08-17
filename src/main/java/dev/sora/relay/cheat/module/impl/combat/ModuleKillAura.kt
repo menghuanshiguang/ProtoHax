@@ -27,7 +27,6 @@ class ModuleKillAura : CheatModule("KillAura", CheatCategory.COMBAT) {
     private var swingSoundValue by boolValue("SwingSound", true)
     private var failRateValue by floatValue("FailRate", 0f, 0f..1f)
     private var failSoundValue by boolValue("FailSound", true).visible { failRateValue > 0f }
-
 	private val handleTick = handle<EventTick> {
 		val range = rangeValue.pow(2)
 		val moduleTargets = moduleManager.getModule(ModuleTargets::class.java)

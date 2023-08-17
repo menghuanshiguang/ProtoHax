@@ -12,7 +12,7 @@ repositories {
     mavenCentral()
     maven { url = 'https://repo.opencollab.dev/maven-releases/' }
     maven { url = 'https://repo.opencollab.dev/maven-snapshots/' }
-    maven { url = 'https://repo.genshit.xyz/maven_repo/' }
+    maven { url = 'https://raw.githubusercontent.com/SkidderMC/ProtoHax-PackageGit/main/maven_repo/' } 
 }
 
 configurations {
